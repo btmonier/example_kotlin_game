@@ -4,6 +4,7 @@ import gfx.Animation
 import gfx.Assets
 import utilities.Constants
 import utilities.Handler
+import java.awt.Color
 import java.awt.Graphics
 import java.awt.image.BufferedImage
 
@@ -16,6 +17,8 @@ class Player(
     private val animLeft: Animation  = Animation(100, Assets.playerLeft),
     private val animRight: Animation = Animation(100, Assets.playerRight)
 ) : Creature(handler = handler, x, y, Constants.Assets.DEFAULT_WIDTH, Constants.Assets.DEFAULT_HEIGHT) {
+
+    val debug = false
 
     private val bXP = 0.5
     private val bYP = 0.8
@@ -69,13 +72,16 @@ class Player(
         )
 
         // DEBUG - bounding box
-//        g.color = Color.PINK
-//        g.fillRect(
-//            (x + bounds.x - handler.getGameCamera().xOffset).toInt(),
-//            (y + bounds.y - handler.getGameCamera().yOffset).toInt(),
-//            bounds.width,
-//            bounds.height
-//        )
+        if (debug) {
+            g.color = Color.BLUE
+            g.fillRect(
+                (x + bounds.x - handler.getGameCamera().xOffset).toInt(),
+                (y + bounds.y - handler.getGameCamera().yOffset).toInt(),
+                bounds.width,
+                bounds.height
+            )
+        }
+
     }
 
     private fun getCurrentAnimationFrame(): BufferedImage? {
