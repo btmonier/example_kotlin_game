@@ -1,3 +1,3 @@
 
-rootProject.name = "example_game"
+rootProject.name = "example_kotlin_game"
 
