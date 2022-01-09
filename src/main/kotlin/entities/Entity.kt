@@ -14,4 +14,25 @@ abstract class Entity(
 ) {
     abstract fun update()
     abstract fun render(g: Graphics)
+
+    private fun getCollisionBounds(xOffset: Float, yOffset: Float): Rectangle {
+        return Rectangle(
+            (x + bounds.x + xOffset).toInt(),
+            (y + bounds.y + yOffset).toInt(),
+            bounds.width,
+            bounds.height
+        )
+    }
+
+    fun checkEntityCollisions(xOffset: Float, yOffset: Float): Boolean {
+        for (e in handler.world!!.entityManager.entities) {
+            if (e == this) {
+                continue
+            }
+            if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
+                return true
+            }
+        }
+        return false
+    }
 }

@@ -18,7 +18,7 @@ class Player(
 ) : Creature(handler = handler, x, y, Constants.Assets.DEFAULT_WIDTH, Constants.Assets.DEFAULT_HEIGHT) {
 
     private val bXP = 0.5
-    private val bYP = 0.5
+    private val bYP = 0.8
     init {
         bounds.x      = (Constants.Assets.DEFAULT_WIDTH / 2) - ((Constants.Assets.DEFAULT_WIDTH * bXP).toInt() / 2)
         bounds.width  = (Constants.Assets.DEFAULT_WIDTH * bXP).toInt()
@@ -40,8 +40,8 @@ class Player(
     }
 
     private fun getInput() {
-        xMove = 0F
-        yMove = 0F
+        xMove = 0f
+        yMove = 0f
         when {
             handler.getKeyManager().up -> {
                 yMove = -speed

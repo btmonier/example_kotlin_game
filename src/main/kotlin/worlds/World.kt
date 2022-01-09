@@ -14,7 +14,7 @@ import kotlin.math.min
 class World(
     private val handler: Handler,
     private val path: String,
-    private val entityManager: EntityManager = EntityManager(handler, Player(handler)),
+    val entityManager: EntityManager = EntityManager(handler, Player(handler)),
     private val tokens: List<String> = Utils().loadFileAsString(path),
     val width: Int = tokens[0].toInt(),
     val height: Int = tokens[1].toInt(),

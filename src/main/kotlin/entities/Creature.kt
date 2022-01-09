@@ -15,12 +15,16 @@ abstract class Creature(
 
     val speed = Constants.Entity.DEFAULT_SPEED
     val health = Constants.Entity.DEFAULT_HEALTH
-    protected var xMove = 0F
-    protected var yMove = 0F
+    protected var xMove = 0f
+    protected var yMove = 0f
 
     fun move() {
-        moveX()
-        moveY()
+        if (!checkEntityCollisions(xMove, 0f)) {
+            moveX()
+        }
+        if (!checkEntityCollisions(0f, yMove)) {
+            moveY()
+        }
     }
 
     private fun moveX() {
