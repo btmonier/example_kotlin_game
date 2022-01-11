@@ -10,8 +10,8 @@ class Rock(handler: Handler, x: Float, y: Float, width: Int, height: Int) : Stat
 
     private val debug = false
     init {
-//        bounds.x      = 2
-//        bounds.width  = 20
+        bounds.x      = 2
+        bounds.width  = 20
         bounds.y      = 3
         bounds.height = 22
     }

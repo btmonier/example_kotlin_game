@@ -12,6 +12,7 @@ class Assets {
         val playerDown = listOf(
             sheet.crop(width * 0, 0, width, height),
             sheet.crop(width * 1, 0, width, height),
+            sheet.crop(width * 0, 0, width, height),
             sheet.crop(width * 2, 0, width, height)
         )
         val playerRight = listOf(
@@ -21,6 +22,7 @@ class Assets {
         val playerUp = listOf(
             sheet.crop(width * 5, 0, width, height),
             sheet.crop(width * 6, 0, width, height),
+            sheet.crop(width * 5, 0, width, height),
             sheet.crop(width * 7, 0, width, height)
         )
         val playerLeft = listOf(
