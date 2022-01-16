@@ -1,6 +1,7 @@
 import gfx.Display
 import gfx.GameCamera
 import input.KeyManager
+import input.MouseManager
 import states.GameState
 import states.MenuState
 import states.State
@@ -12,27 +13,38 @@ class Game(
     var title: String,
     var width: Int,
     var height: Int,
+    var keyManager: KeyManager = KeyManager(),
+    var mouseManager: MouseManager = MouseManager(),
+    private var display: Display = Display(title, width, height)
 ) : Runnable {
 
-    private var display: Display = Display(title, width, height)
-    private var keyManager: KeyManager = KeyManager()
     private var thread: Thread? = null
     private var isRunning: Boolean = false
     private var fps = Constants.Window.FPS
     private var gameCamera: GameCamera? = null
     private var handler: Handler = Handler(this)
+    val menuState = MenuState(handler)
+    val gameState = GameState(handler)
 
     init {
         start()
     }
 
     private fun initialize() {
+        // Keyboard
         display.getFrame().addKeyListener(keyManager)
         display.getCanvas().addKeyListener(keyManager)
+
+        // Mouse
+        display.getFrame().addMouseListener(mouseManager)
+        display.getCanvas().addMouseListener(mouseManager)
+        display.getFrame().addMouseMotionListener(mouseManager)
+        display.getCanvas().addMouseMotionListener(mouseManager)
+
+        // Misc
         gameCamera  = GameCamera(handler,0F, 0F)
-        val menuState = MenuState(handler)
-        val gameState = GameState(handler)
-        State.state = gameState
+
+        State.state = menuState
     }
 
     private fun update() {
@@ -76,10 +88,6 @@ class Game(
             }
         }
         stop()
-    }
-
-    fun getKeyManager(): KeyManager {
-        return keyManager
     }
 
     fun getGameCamera(): GameCamera? {

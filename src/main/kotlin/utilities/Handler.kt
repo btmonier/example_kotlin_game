@@ -3,10 +3,10 @@ package utilities
 import Game
 import gfx.GameCamera
 import input.KeyManager
+import input.MouseManager
 import worlds.World
 
-class Handler(private var game: Game, var world: World? = null) {
-
+class Handler(var game: Game, var world: World? = null) {
     fun getWidth(): Int {
         return game.width
     }
@@ -16,7 +16,11 @@ class Handler(private var game: Game, var world: World? = null) {
     }
 
     fun getKeyManager(): KeyManager {
-        return game.getKeyManager()
+        return game.keyManager
+    }
+
+    fun getMouseManager(): MouseManager {
+        return game.mouseManager
     }
 
     fun getGameCamera(): GameCamera {

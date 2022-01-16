@@ -13,6 +13,7 @@ class Constants {
         const val DEFAULT_WIDTH  = 32
         const val DEFAULT_HEIGHT = 32
         const val N_METADATA     = 4
+        const val SCALE          = 2
         const val SPRITE_DIM_X   = 16
         const val SPRITE_DIM_Y   = 16
         const val WORLD_PATH     = "res/world.txt"

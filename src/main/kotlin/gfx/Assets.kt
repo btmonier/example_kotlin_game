@@ -29,6 +29,10 @@ class Assets {
             sheet.crop(width * 8, 0, width, height),
             sheet.crop(width * 9, 0, width, height)
         )
+        val btnStart = listOf(
+            sheet.crop(width * 0, height * 4, width * 2, height),
+            sheet.crop(width * 2, height * 4, width * 2, height)
+        )
 
         // Static entities
         val rock = sheet.crop(width * 4, height * 3, width, height)

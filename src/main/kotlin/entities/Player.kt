@@ -16,17 +16,15 @@ class Player(
     private val animUp: Animation    = Animation(100, Assets.playerUp),
     private val animLeft: Animation  = Animation(100, Assets.playerLeft),
     private val animRight: Animation = Animation(100, Assets.playerRight)
-) : Creature(handler = handler, x, y, Constants.Assets.DEFAULT_WIDTH, Constants.Assets.DEFAULT_HEIGHT) {
+) : Creature(handler, x, y, Constants.Assets.DEFAULT_WIDTH, Constants.Assets.DEFAULT_HEIGHT) {
 
-    val debug = false
+    private val debug = false
 
-    private val bXP = 0.5
-    private val bYP = 0.8
     init {
-        bounds.x      = (Constants.Assets.DEFAULT_WIDTH / 2) - ((Constants.Assets.DEFAULT_WIDTH * bXP).toInt() / 2)
-        bounds.width  = (Constants.Assets.DEFAULT_WIDTH * bXP).toInt()
-        bounds.y      = (Constants.Assets.DEFAULT_HEIGHT * bYP).toInt()
-        bounds.height = Constants.Assets.DEFAULT_HEIGHT - (Constants.Assets.DEFAULT_HEIGHT * bYP).toInt()
+        bounds.x      = 6 * Constants.Assets.SCALE
+        bounds.width  = 4 * Constants.Assets.SCALE
+        bounds.y      = 6 * Constants.Assets.SCALE
+        bounds.height = 6 * Constants.Assets.SCALE
     }
 
     override fun update() {
