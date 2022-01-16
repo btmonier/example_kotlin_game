@@ -23,8 +23,8 @@ class Player(
     init {
         bounds.x      = 6 * Constants.Assets.SCALE
         bounds.width  = 4 * Constants.Assets.SCALE
-        bounds.y      = 6 * Constants.Assets.SCALE
-        bounds.height = 6 * Constants.Assets.SCALE
+        bounds.y      = 3 * Constants.Assets.SCALE
+        bounds.height = 13 * Constants.Assets.SCALE
     }
 
     override fun update() {

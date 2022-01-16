@@ -4,6 +4,7 @@ import gfx.Assets
 import ui.ClickListener
 import ui.UIImageButton
 import ui.UIManager
+import utilities.Constants
 import utilities.Handler
 import java.awt.Graphics
 
@@ -12,8 +13,8 @@ class MenuState(val handler: Handler, private val uiManager: UIManager = UIManag
         handler.getMouseManager().uiManager = uiManager
         uiManager.addObject(
             UIImageButton(
-                50f,
-                50f,
+                (Constants.Window.SCREEN_WIDTH / 2).toFloat() - 64,
+                (Constants.Window.SCREEN_HEIGHT / 2).toFloat() - 32,
                 128,
                 64,
                 Assets.btnStart,

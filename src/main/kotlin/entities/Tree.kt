@@ -1,25 +1,26 @@
 package entities
 
 import gfx.Assets
+import utilities.Constants
 import utilities.Handler
 import java.awt.Color
 import java.awt.Graphics
 
-class Rock(handler: Handler, x: Float, y: Float, width: Int, height: Int) : StaticEntity(handler, x, y, width, height) {
+class Tree(handler: Handler, x: Float, y: Float, width: Int, height: Int) : StaticEntity(handler, x, y, width, height) {
 
-    private val debug = false
+    private val debug = true
     init {
-        bounds.x      = 2
-        bounds.width  = 20
-        bounds.y      = 3
-        bounds.height = 22
+        bounds.x      = 6 * Constants.Assets.SCALE
+        bounds.width  = 6 * Constants.Assets.SCALE
+        bounds.y      = 23 * Constants.Assets.SCALE
+        bounds.height = 9 * Constants.Assets.SCALE
     }
 
     override fun update() {}
 
     override fun render(g: Graphics) {
         g.drawImage(
-            Assets.rock,
+            Assets.tree,
             (x - handler.getGameCamera().xOffset).toInt(),
             (y - handler.getGameCamera().yOffset).toInt(),
             width,

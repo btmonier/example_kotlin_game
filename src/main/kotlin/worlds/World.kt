@@ -3,6 +3,7 @@ package worlds
 import entities.EntityManager
 import entities.Player
 import entities.Rock
+import entities.Tree
 import tiles.Tile
 import utilities.Constants
 import utilities.Handler
@@ -32,6 +33,15 @@ class World(
                 (Constants.Assets.DEFAULT_HEIGHT * 4).toFloat(),
                 Constants.Assets.DEFAULT_WIDTH,
                 Constants.Assets.DEFAULT_HEIGHT
+            )
+        )
+        entityManager.addEntity(
+            Tree(
+                handler,
+                (Constants.Assets.DEFAULT_WIDTH * 10).toFloat(),
+                (Constants.Assets.DEFAULT_HEIGHT * 4).toFloat(),
+                Constants.Assets.DEFAULT_WIDTH,
+                Constants.Assets.DEFAULT_HEIGHT * 2
             )
         )
         entityManager.player.x = spawnX

@@ -36,6 +36,7 @@ class Assets {
 
         // Static entities
         val rock = sheet.crop(width * 4, height * 3, width, height)
+        val tree = sheet.crop(width * 5, height * 3, width, height * 2)
 
         // Tiles
         val desert = sheet.crop(0, height * 2, width, height)
