@@ -38,4 +38,6 @@ class Rock(handler: Handler, x: Float, y: Float, width: Int, height: Int) : Stat
             )
         }
     }
+
+    override fun die() {}
 }

@@ -20,6 +20,9 @@ class EntityManager(
     fun update() {
         for (i in entities) {
             i.update()
+            if (!i.active) {
+                entities.remove(i)
+            }
         }
         entities.sortWith(renderSorter)
     }

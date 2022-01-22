@@ -14,7 +14,7 @@ abstract class Creature(
 ) : Entity(handler, x, y, width, height) {
 
     val speed = Constants.Entity.DEFAULT_SPEED
-    val health = Constants.Entity.DEFAULT_HEALTH
+
     protected var xMove = 0f
     protected var yMove = 0f
 
